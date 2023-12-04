@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar tools &mdash; control 0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="examples_0.html" />
+    <link rel="prev" title="Solar" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Solar</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Solar tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solar-position">Solar position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bird-s-clear-sky">Bird’s Clear Sky</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#climatology">Climatology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_0.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pdp/modules.html">pdp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_tools/modules.html">dev_tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Solar</a> &raquo;</li>
+      <li>Solar tools</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solar-tools">
+<h1>Solar tools<a class="headerlink" href="#solar-tools" title="Permalink to this heading"></a></h1>
+<section id="solar-position">
+<h2>Solar position<a class="headerlink" href="#solar-position" title="Permalink to this heading"></a></h2>
+<p>The solar position is based on the work of Reda &amp; Andreas <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Ibrahim Reda and Afshin Andreas. Solar Position Algorithm for Solar Radiation Applications (Revised). Technical Report NREL/TP-560-34302, National Renewable Energy Laboratory, Golden, Colorado, USA, January 2008. URL: http://www.osti.gov/servlets/purl/15003974/.">RA08</a>]</span> which includes the Meeus
+<span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Jean Meeus. Astronomical Algorithms. Willmann-Bell, Richmond, Va, 2nd edition edition, January 1998. ISBN 978-0-943396-61-3.">Mee98</a>]</span> and Iqbal <span id="id3">[<a class="reference internal" href="bibliography.html#id4" title="Muhammad Iqbal. An Introduction To Solar Radiation. Elsevier, 1983. ISBN 978-0-323-15181-8.">Iqb83</a>]</span> algorithms. For more details on the
+solar position algorithm, refer to <a class="reference external" href="https://www.nrel.gov/docs/fy08osti/34302.pdf">Reda and Andreas</a>. The algorithm
+use the earth Δt and Universal Time (UTC) fro time correction. For more information on Δt and Universal Time, see
+<a class="reference external" href="https://eclipse.gsfc.nasa.gov/SEhelp/deltaT.html">Nasa</a>.</p>
+</section>
+<section id="bird-s-clear-sky">
+<h2>Bird’s Clear Sky<a class="headerlink" href="#bird-s-clear-sky" title="Permalink to this heading"></a></h2>
+<p>Brird’s clear sky irradiation model is based on work of Bird <span id="id4">[<a class="reference internal" href="bibliography.html#id5" title="Richard E. Bird. A Simplified Clear Sky Model for Direct and Diffuse Insolation on Horizontal Surfaces. Solar Energy Research Institute, 1981. Google-Books-ID: 3Z9AjgEACAAJ.">Bir81</a>]</span>. For more details on the
+Bird’s algorithm, refer to <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/assets/data/tr-642-761.pdf">Bird</a>.</p>
+</section>
+</section>
+<section id="climatology">
+<h1>Climatology<a class="headerlink" href="#climatology" title="Permalink to this heading"></a></h1>
+<p>The probabilistic forecasts in this package use Clear Sky Indexes <span class="math notranslate nohighlight">\(CSI\)</span> and clear sky data
+<span class="math notranslate nohighlight">\(GHI_{\text{Clear Sky}}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[CSI=\frac{GHI}{GHI_{\text{Clear Sky}}}\]</div>
+<dl class="simple">
+<dt>The climatology can be computed in two ways:</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>A distribution is generated from all clear sky indices (<span class="math notranslate nohighlight">\(\phi=ecdf(CSI)\)</span>).</dt><dd><p>The forecast is generated based on this single empirical distribution.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For each time slot, an empirical distribution (ecdf) is generated (<span class="math notranslate nohighlight">\(\phi_t=ecdf(CSI_t)\)</span>).</dt><dd><p>For example, if there are 10 hours  in a day, 10 CSI distributions will be generated. Forecasts for each time
+range will be generated by its own distribution.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl>
+<dt>CSI data is filtered with two main parameters:</dt><dd><ol class="arabic">
+<li><dl class="simple">
+<dt>The zenith angle, all data corresponding to angles greater than this value will be ignored.</dt><dd><p>The default value is set to 86°</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>The maximum CSI value: Values greater than <span class="math notranslate nohighlight">\(CSI_{max}\)</span> will be replaced by <span class="math notranslate nohighlight">\(CSI_{max}\)</span>.</dt><dd><p>The maximum value is calculated as the minimum of the user-defined (<span class="math notranslate nohighlight">\(CSI_{\text{user}}\)</span>) and the
+fraction (<span class="math notranslate nohighlight">\(f_0 \leq 1\)</span>) of extraterrestrial solar radiation (<span class="math notranslate nohighlight">\(E_0=1367 Wm^{-2}\)</span>) reaching the
+Earth’s surface divided by the max value of the global horizontal irradiation <span class="math notranslate nohighlight">\(GHI\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[CSI_{max}=min\left(CSI_{user},\frac{E_0 \times f_0}{max({GHI})}\right)\]</div>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+<p>The climatology computation rely on <code class="xref py py-meth docutils literal notranslate"><span class="pre">solar.ecdf0()</span></code></p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Solar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples_0.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Faly Ramahatana &amp; Mathieu David.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

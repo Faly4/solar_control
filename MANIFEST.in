@@ -1,0 +1,2 @@
+include pv_solar/data/*.npy
+include pv_solar/data/*.pkl

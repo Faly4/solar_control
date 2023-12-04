@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage storage with PV from probabilistic input &mdash; control 0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dev_tools" href="../../dev_tools/modules.html" />
+    <link rel="prev" title="Compute the efficiency of an inverter rated at 2500W connected to a PV module of 1000Wc" href="examples_inverter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../pv_solar/modules.html">Solar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">pdp</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pdp.html">pdp package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../examples_1.html">Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="examples_inverter.html">Compute the efficiency of an inverter rated at 2500W connected to a PV module of 1000Wc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples_inverter.html#compute-the-input-of-an-inverter-rated-at-2500w-from-its-output">Compute the input of an inverter rated at 2500W from its output</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Manage storage with PV from probabilistic input</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#import-function">Import function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-storage-characteristics">Define storage characteristics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-pv-array-characteristics">Define PV array characteristics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-simulation-constraints-and-variables">Define simulation constraints and variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-cost">Define cost</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-cost-function">Define cost function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation">Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-result">Plot result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_tools/modules.html">dev_tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../modules.html">pdp</a> &raquo;</li>
+          <li><a href="../examples_1.html">Examples</a> &raquo;</li>
+      <li>Manage storage with PV from probabilistic input</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="manage-storage-with-pv-from-probabilistic-input">
+<h1>Manage storage with PV from probabilistic input<a class="headerlink" href="#manage-storage-with-pv-from-probabilistic-input" title="Permalink to this heading"></a></h1>
+<section id="import-function">
+<h2>Import function<a class="headerlink" href="#import-function" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">2</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="linenos">3</span><span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+<span class="linenos">4</span><span class="kn">from</span> <span class="nn">pdp</span> <span class="kn">import</span> <span class="n">dmx0g</span><span class="p">,</span> <span class="n">inv_eff</span><span class="p">,</span> <span class="n">path0x</span><span class="p">,</span> <span class="n">inv_in</span><span class="p">,</span> <span class="n">state_init</span><span class="p">,</span> <span class="n">iut_load</span><span class="p">,</span> <span class="n">iut_pv</span>
+</pre></div>
+</div>
+</section>
+<section id="define-storage-characteristics">
+<h2>Define storage characteristics<a class="headerlink" href="#define-storage-characteristics" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ex1</span> <span class="o">=</span> <span class="mf">13.5</span>  <span class="c1"># max usable energy kWh</span>
+<span class="linenos">2</span><span class="n">mx11</span> <span class="o">=</span> <span class="mf">0.9</span>  <span class="c1"># max charge rate</span>
+<span class="linenos">3</span><span class="n">mx22</span> <span class="o">=</span> <span class="mf">0.9</span>  <span class="c1"># max discharge rate</span>
+<span class="linenos">4</span><span class="n">ef1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span> <span class="c1"># storage efficiency</span>
+<span class="linenos">5</span><span class="n">z1</span> <span class="o">=</span> <span class="mf">0.8312517e-4</span> <span class="c1"># ageing coefficient</span>
+<span class="linenos">6</span><span class="n">soh1</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="c1"># minimal storage health state</span>
+<span class="linenos">7</span><span class="n">invr7</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># ESS inverter kW</span>
+</pre></div>
+</div>
+</section>
+<section id="define-pv-array-characteristics">
+<h2>Define PV array characteristics<a class="headerlink" href="#define-pv-array-characteristics" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">pmpp</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># 6 kW</span>
+<span class="linenos">2</span><span class="n">mod1</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># module 300Wc</span>
+<span class="linenos">3</span><span class="n">smod1</span> <span class="o">=</span> <span class="mf">1.7522</span> <span class="c1"># surface module1</span>
+<span class="linenos">4</span><span class="n">effmod1</span> <span class="o">=</span> <span class="mf">0.1546</span> <span class="c1"># module PV efficiency</span>
+<span class="linenos">5</span><span class="n">invr8</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># PV inverter kW</span>
+</pre></div>
+</div>
+</section>
+<section id="define-simulation-constraints-and-variables">
+<h2>Define simulation constraints and variables<a class="headerlink" href="#define-simulation-constraints-and-variables" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">dx02</span> <span class="o">=</span> <span class="mi">24</span>  <span class="c1"># number of hours of simulation</span>
+<span class="linenos">2</span><span class="n">dtx1</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># timestep of integration</span>
+<span class="linenos">3</span><span class="n">pmax1</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># max power from the grid</span>
+<span class="linenos">4</span><span class="n">soc0</span> <span class="o">=</span> <span class="mf">0.50</span>  <span class="c1"># initial SOC</span>
+<span class="linenos">5</span><span class="n">gx02</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># discretization of the storage</span>
+<span class="linenos">6</span><span class="n">gx02</span> <span class="o">=</span> <span class="n">state_init</span><span class="p">(</span><span class="n">gx02</span><span class="p">,</span> <span class="n">soc0</span><span class="p">)</span> <span class="c1"># initialization of the storage</span>
+</pre></div>
+</div>
+</section>
+<section id="define-cost">
+<h2>Define cost<a class="headerlink" href="#define-cost" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ess1inv</span> <span class="o">=</span> <span class="mf">5988.87</span> <span class="c1"># ESS investment cost</span>
+<span class="linenos">2</span><span class="n">c1grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">dx02</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span>  <span class="c1"># grid cost import</span>
+<span class="linenos">3</span><span class="n">c2grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">dx02</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span>  <span class="c1"># grid cost export</span>
+<span class="linenos">4</span><span class="n">c3grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">dx02</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">*</span> <span class="mi">35</span>  <span class="c1"># penality cost</span>
+</pre></div>
+</div>
+</section>
+<section id="define-cost-function">
+<h2>Define cost function<a class="headerlink" href="#define-cost-function" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">cost3dp</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">,</span> <span class="n">up</span><span class="p">,</span> <span class="n">dtx0</span><span class="p">,</span> <span class="n">load2</span><span class="p">,</span> <span class="n">pv2</span><span class="p">,</span> <span class="n">sx2</span><span class="p">,</span> <span class="n">pmax0</span><span class="p">,</span> <span class="n">ex0</span><span class="p">,</span> <span class="n">mx0</span><span class="p">,</span> <span class="n">mx1</span><span class="p">,</span> <span class="n">ef0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">ess0inv</span><span class="p">,</span>
+<span class="linenos"> 2</span><span class="n">soh0</span><span class="p">,</span> <span class="n">inv0</span><span class="p">,</span> <span class="n">c1grid</span><span class="p">,</span> <span class="n">c2grid</span><span class="p">,</span> <span class="n">c3grid</span><span class="p">):</span>
+<span class="linenos"> 3</span>    <span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">,</span> <span class="n">mx0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">))</span>  <span class="c1"># charge</span>
+<span class="linenos"> 4</span>    <span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="o">-</span><span class="n">mx1</span><span class="p">,</span> <span class="n">dsoc0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">))</span>  <span class="c1"># discharge</span>
+<span class="linenos"> 5</span>    <span class="n">w3</span> <span class="o">=</span> <span class="p">(</span><span class="n">w1</span> <span class="o">+</span> <span class="n">w2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e10</span>
+<span class="linenos"> 6</span>    <span class="n">m1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">))</span>  <span class="c1"># charging</span>
+<span class="linenos"> 7</span>    <span class="n">m2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">m1</span><span class="p">)</span>  <span class="c1"># discharge</span>
+<span class="linenos"> 8</span>    <span class="n">m3</span> <span class="o">=</span> <span class="p">(</span><span class="n">m2</span> <span class="o">+</span> <span class="n">m1</span><span class="p">)</span> <span class="o">/</span> <span class="n">ef0</span>
+<span class="linenos"> 9</span>    <span class="n">p1bess</span> <span class="o">=</span> <span class="o">-</span><span class="n">dsoc0</span> <span class="o">*</span> <span class="n">ex0</span> <span class="o">/</span> <span class="n">dtx0</span> <span class="o">*</span> <span class="n">m3</span>
+<span class="linenos">10</span>    <span class="n">netha1</span> <span class="o">=</span> <span class="n">inv_eff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">p1bess</span><span class="p">),</span> <span class="n">inv0</span><span class="p">)</span>
+<span class="linenos">11</span>    <span class="n">netha2</span> <span class="o">=</span> <span class="n">inv_in</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">p1bess</span><span class="p">),</span> <span class="n">inv0</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">netha2</span> <span class="o">=</span> <span class="n">inv_eff</span><span class="p">(</span><span class="n">netha2</span><span class="p">,</span> <span class="n">inv0</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">n6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">netha2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">netha2</span><span class="p">))</span>
+<span class="linenos">14</span>    <span class="n">netha2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n6</span><span class="p">,</span> <span class="n">netha2</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">m4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">netha1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">netha2</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="n">p0bess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">p1bess</span><span class="p">,</span> <span class="n">m4</span><span class="p">)</span>  <span class="c1"># BESS power</span>
+<span class="linenos">17</span>    <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p0bess</span><span class="p">)</span>
+<span class="linenos">18</span>    <span class="n">doh1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">dsoc0</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span> <span class="o">*</span> <span class="n">z0</span>
+<span class="linenos">19</span>    <span class="n">c0ess</span> <span class="o">=</span> <span class="o">-</span><span class="n">ess0inv</span> <span class="o">*</span> <span class="n">doh1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">soh0</span><span class="p">)</span> <span class="o">+</span> <span class="n">w3</span>
+<span class="linenos">20</span>    <span class="c1"># &lt;!-- compute_grid_cost --&gt;</span>
+<span class="linenos">21</span>    <span class="n">pv0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">pv2</span><span class="p">[</span><span class="n">up</span><span class="p">,</span> <span class="p">:],</span> <span class="p">[</span><span class="n">n2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">22</span>    <span class="n">l2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pv2</span><span class="p">[</span><span class="n">up</span><span class="p">,</span> <span class="p">:])</span>
+<span class="linenos">23</span>    <span class="c1"># print(&quot;------&quot;)</span>
+<span class="linenos">24</span>    <span class="n">balan4</span> <span class="o">=</span> <span class="o">-</span><span class="n">pv0</span><span class="p">[</span><span class="n">up</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">load2</span><span class="p">[</span><span class="n">up</span><span class="p">]</span> <span class="c1"># energy balance</span>
+<span class="linenos">25</span>    <span class="n">p1bess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">p0bess</span><span class="p">,</span> <span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">l2</span><span class="p">])</span>
+<span class="linenos">26</span>    <span class="n">pw0</span> <span class="o">=</span> <span class="n">balan4</span> <span class="o">-</span> <span class="n">p1bess</span>  <span class="c1"># Grid power [pw0 &gt; 0 :importation]</span>
+<span class="linenos">27</span>    <span class="n">c3gr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">pw0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pw0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">pw0</span><span class="p">)))</span> <span class="o">*</span> <span class="n">c2grid</span><span class="p">[</span><span class="n">up</span><span class="p">]</span>  <span class="c1"># export to the grid</span>
+<span class="linenos">28</span>    <span class="n">pw2</span> <span class="o">=</span> <span class="n">pw0</span> <span class="o">-</span> <span class="n">pmax0</span>  <span class="c1"># excess of energy</span>
+<span class="linenos">29</span>    <span class="n">pw2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">pw2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">pw2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">pw0</span><span class="p">)))</span>
+<span class="linenos">30</span>    <span class="n">c2gr</span> <span class="o">=</span> <span class="n">pw2</span> <span class="o">*</span> <span class="n">c3grid</span><span class="p">[</span><span class="n">up</span><span class="p">]</span>  <span class="c1"># penalty cost</span>
+<span class="linenos">31</span>    <span class="n">pw1</span> <span class="o">=</span> <span class="n">pw0</span> <span class="o">-</span> <span class="n">pw2</span>  <span class="c1"># import from grid</span>
+<span class="linenos">32</span>    <span class="n">c1gr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">pw1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">pw1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">pw1</span><span class="p">)))</span> <span class="o">*</span> <span class="n">c1grid</span><span class="p">[</span><span class="n">up</span><span class="p">]</span>
+<span class="linenos">33</span>    <span class="c1"># TODO  Compute grid cost</span>
+<span class="linenos">34</span>    <span class="n">c0gr</span> <span class="o">=</span> <span class="n">c1gr</span> <span class="o">+</span> <span class="n">c2gr</span> <span class="o">+</span> <span class="n">c3gr</span>
+<span class="linenos">35</span>    <span class="n">n3</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pv2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="linenos">36</span>    <span class="n">sx3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">sx2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="linenos">37</span>    <span class="n">sx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sx2</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sx2</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">n3</span><span class="p">),</span> <span class="n">sx3</span> <span class="o">*</span> <span class="n">n3</span><span class="p">)</span>
+<span class="linenos">38</span>    <span class="c1"># ------------------------- compute_math_expectation_depending_on_pv</span>
+<span class="linenos">39</span>    <span class="n">cpb1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">c0gr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">sx2</span><span class="p">))</span>
+<span class="linenos">40</span>    <span class="n">out1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">41</span>    <span class="n">out1</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c0ess</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">cpb1</span><span class="p">))</span>  <span class="c1"># cost (expectation)</span>
+<span class="linenos">42</span>    <span class="n">out1</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">pw0</span><span class="p">,</span> <span class="n">sx3</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">sx3</span><span class="p">))</span>  <span class="c1"># energy from grid</span>
+<span class="linenos">43</span>    <span class="k">return</span> <span class="n">out1</span>
+</pre></div>
+</div>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">load2</span> <span class="o">=</span> <span class="n">iut_load</span> <span class="c1"># Load</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">pv0</span> <span class="o">=</span> <span class="n">iut_pv</span> <span class="c1"># probabilistic forecast of GHI</span>
+<span class="linenos"> 4</span><span class="n">sx1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># probability of occurrence</span>
+<span class="linenos"> 5</span><span class="n">pv1</span> <span class="o">=</span> <span class="n">pmpp</span> <span class="o">/</span> <span class="n">mod1</span> <span class="o">*</span> <span class="n">smod1</span> <span class="o">*</span> <span class="n">effmod1</span> <span class="o">*</span> <span class="n">pv0</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mf">1.05</span> <span class="o">/</span> <span class="mf">1.15</span>  <span class="c1"># PV power</span>
+<span class="linenos"> 6</span><span class="n">n0</span> <span class="o">=</span> <span class="n">inv_eff</span><span class="p">(</span><span class="n">pv1</span><span class="p">,</span> <span class="n">invr8</span><span class="p">)</span> <span class="c1"># PV inverter efficiency</span>
+<span class="linenos"> 7</span><span class="n">pv2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">pv1</span><span class="p">,</span> <span class="n">n0</span><span class="p">)</span> <span class="c1"># PV inverter output</span>
+<span class="linenos"> 8</span>
+<span class="hll"><span class="linenos"> 9</span><span class="n">p13</span> <span class="o">=</span> <span class="n">dmx0g</span><span class="p">(</span><span class="n">gx02</span><span class="p">,</span> <span class="n">dx02</span><span class="p">,</span> <span class="n">cost3dp</span><span class="p">,</span> <span class="n">dtx1</span><span class="p">,</span> <span class="n">load2</span><span class="p">,</span> <span class="n">pv2</span><span class="p">,</span> <span class="n">sx1</span><span class="p">,</span> <span class="n">pmax1</span><span class="p">,</span> <span class="n">ex1</span><span class="p">,</span> <span class="n">mx11</span><span class="p">,</span> <span class="n">mx22</span><span class="p">,</span> <span class="n">ef1</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">10</span><span class="n">z1</span><span class="p">,</span> <span class="n">ess1inv</span><span class="p">,</span> <span class="n">soh1</span><span class="p">,</span> <span class="n">invr7</span><span class="p">,</span> <span class="n">c1grid</span><span class="p">,</span> <span class="n">c2grid</span><span class="p">,</span> <span class="n">c3grid</span><span class="p">)</span> <span class="c1"># compute solution</span>
+</span><span class="linenos">11</span><span class="n">s0</span> <span class="o">=</span> <span class="n">path0x</span><span class="p">(</span><span class="n">p13</span><span class="p">,</span> <span class="n">gx02</span><span class="p">,</span> <span class="n">soc0</span><span class="p">)</span> <span class="c1"># get optimal path</span>
+<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span> <span class="c1"># print solution</span>
+</pre></div>
+</div>
+</section>
+<section id="plot-result">
+<h2>Plot result<a class="headerlink" href="#plot-result" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dx02</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="n">x1</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">dx02</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="n">x2</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">dx02</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">im1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">load2</span><span class="p">[</span><span class="n">x1</span><span class="p">])</span>
+<span class="linenos"> 7</span><span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Load (kW)&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.95&#39;</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">im2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pv2</span><span class="p">[</span><span class="n">x1</span><span class="p">])</span>
+<span class="linenos">11</span><span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;PV (kW)&quot;</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.95&#39;</span><span class="p">)</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="n">im3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">s0</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">])</span>
+<span class="linenos">15</span><span class="n">ax3</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gx02</span><span class="p">)))</span>
+<span class="linenos">16</span><span class="n">ax3</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;SOC&quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">ax3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.95&#39;</span><span class="p">)</span>
+<span class="linenos">18</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="examples_inverter.html" class="btn btn-neutral float-left" title="Compute the efficiency of an inverter rated at 2500W connected to a PV module of 1000Wc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../dev_tools/modules.html" class="btn btn-neutral float-right" title="dev_tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Faly Ramahatana &amp; Mathieu David.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
