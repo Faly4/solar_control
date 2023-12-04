@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module contents &mdash; Control 0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Probabilistic forecast from climatology" href="examples/examples_climato.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Solar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="solar.html">Solar tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solar.html#climatology">Climatology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_0.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solar.aberr_corr"><code class="docutils literal notranslate"><span class="pre">aberr_corr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.almanac"><code class="docutils literal notranslate"><span class="pre">almanac()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.appt_sidereal_tm"><code class="docutils literal notranslate"><span class="pre">appt_sidereal_tm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.appt_sun_long"><code class="docutils literal notranslate"><span class="pre">appt_sun_long()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.bird_clear_sky"><code class="docutils literal notranslate"><span class="pre">bird_clear_sky()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.clim_csi"><code class="docutils literal notranslate"><span class="pre">clim_csi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.clim_csi_hour"><code class="docutils literal notranslate"><span class="pre">clim_csi_hour()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.earth_dlt_t"><code class="docutils literal notranslate"><span class="pre">earth_dlt_t()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.earth_helio"><code class="docutils literal notranslate"><span class="pre">earth_helio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.earth_helio_all"><code class="docutils literal notranslate"><span class="pre">earth_helio_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.earth_term"><code class="docutils literal notranslate"><span class="pre">earth_term()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.ecdf0"><code class="docutils literal notranslate"><span class="pre">ecdf0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.ephem_da"><code class="docutils literal notranslate"><span class="pre">ephem_da()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.geo_long"><code class="docutils literal notranslate"><span class="pre">geo_long()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.geo_sun_dec"><code class="docutils literal notranslate"><span class="pre">geo_sun_dec()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.geo_sun_r_ac"><code class="docutils literal notranslate"><span class="pre">geo_sun_r_ac()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.ghi_clim"><code class="docutils literal notranslate"><span class="pre">ghi_clim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.incid_angle_surf"><code class="docutils literal notranslate"><span class="pre">incid_angle_surf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.nutation_long_obl"><code class="docutils literal notranslate"><span class="pre">nutation_long_obl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.obl_eclip"><code class="docutils literal notranslate"><span class="pre">obl_eclip()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.obs_lcl_hr_ang"><code class="docutils literal notranslate"><span class="pre">obs_lcl_hr_ang()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.topo_astro_az_ang"><code class="docutils literal notranslate"><span class="pre">topo_astro_az_ang()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.topo_el_angl"><code class="docutils literal notranslate"><span class="pre">topo_el_angl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.topo_el_angl_corr"><code class="docutils literal notranslate"><span class="pre">topo_el_angl_corr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.topo_lcl_hour_angl"><code class="docutils literal notranslate"><span class="pre">topo_lcl_hour_angl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar.topo_sun"><code class="docutils literal notranslate"><span class="pre">topo_sun()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pdp/modules.html">pdp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_tools/modules.html">dev_tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Solar</a> &raquo;</li>
+      <li>Module contents</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-solar">
+<span id="module-contents"></span><h1>Module contents<a class="headerlink" href="#module-solar" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.aberr_corr">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">aberr_corr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.aberr_corr" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the aberration correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Earth radius vector in Astronomical Units (AU)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Aberration correction (°)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.almanac">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">almanac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">press</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">γ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">σ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ω</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.almanac" title="Permalink to this definition"></a></dt>
+<dd><p>Compute solar positions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>el</strong> (<em>float</em>) – Elevation in meter (m)</p></li>
+<li><p><strong>offset</strong> (<em>float</em>) – Decimal hour from UTC time</p></li>
+<li><p><strong>press</strong> (<em>float</em>) – annual average local pressure in millibars (mbar)</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – Annual average local temperature Celsius (°C)</p></li>
+<li><p><strong>time_step</strong> (<em>tuple</em>) – List of date with Python datetime format</p></li>
+<li><p><strong>γ</strong> (<em>float</em>) – Surface azimuth rotation angle, measured from south to the projection of the surface normal on the horizontal
+plane, positive or negative if oriented west or east from south, respectively</p></li>
+<li><p><strong>σ</strong> (<em>float</em>) – Observer geographical longitude (°)</p></li>
+<li><p><strong>φ</strong> (<em>float</em>) – Geocentric latitude (rad)</p></li>
+<li><p><strong>ω</strong> (<em>float</em>) – Slope of the surface measured from the horizontal plane (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>jd - Julian Day</p></li>
+<li><p>β - Geocentric latitude (°)</p></li>
+<li><p>l0 - Earth heliocentric longitude (°)</p></li>
+<li><p>r0 (- Earth heliocentric radius vector in Astronomical Units (AU)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_0\)</span> - Geocentric longitude (°)</p></li>
+<li><p>Δε - Nutation in obliquity (°)</p></li>
+<li><p>Δψ - Nutation in longitude (°)</p></li>
+<li><p>ε - True obliquity of the ecliptic  in radian (°)</p></li>
+<li><p>λ - Apparent sun longitude (°)</p></li>
+<li><p>α - Geocentric sun right ascension (°)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> - Geocentric sun declination  in radian (°)</p></li>
+<li><p>θ - Topocentric zenith angle (°)</p></li>
+<li><p>Φ - Topocentric azimuth angle (°)</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_0\)</span> - Incidence angle for a surface oriented in any direction (°)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.appt_sidereal_tm">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">appt_sidereal_tm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δψ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ε</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.appt_sidereal_tm" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the apparent sidereal time at Greenwich at any given time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jd</strong> (<em>numpy.ndarray</em>) – Julian Day</p></li>
+<li><p><strong>jc</strong> (<em>numpy.ndarray</em>) – Julian century</p></li>
+<li><p><strong>Δψ</strong> (<em>numpy.ndarray</em>) – Nutation in longitude (°)</p></li>
+<li><p><strong>ε</strong> (<em>numpy.ndarray</em>) – True obliquity of the ecliptic ε (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Apparent sidereal time at Greenwich (°)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.appt_sun_long">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">appt_sun_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">θ2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δψ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δτ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.appt_sun_long" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the apparent sun longitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>θ2</strong> (<em>numpy.ndarray</em>) – Geocentric longitude <span class="math notranslate nohighlight">\(\theta_0\)</span> (rad)</p></li>
+<li><p><strong>Δψ</strong> (<em>numpy.ndarray</em>) – Nutation in longitude (°)</p></li>
+<li><p><strong>Δτ</strong> (<em>numpy.ndarray</em>) – Aberration correction (°)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Apparent sun longitude (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.bird_clear_sky">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">bird_clear_sky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">σ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pssr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">τ500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">τ380</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.bird_clear_sky" title="Permalink to this definition"></a></dt>
+<dd><p>Compute Brid’s clear sky model for radiaion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_step</strong> (<em>pandas.DatetimeIndex</em>) – Pandas.DatetimeIndex</p></li>
+<li><p><strong>offset</strong> (<em>float</em>) – Time zone from UTC</p></li>
+<li><p><strong>φ</strong> (<em>float</em>) – Latitude (°)</p></li>
+<li><p><strong>σ</strong> (<em>float</em>) – Longitude (°)</p></li>
+<li><p><strong>pssr</strong> (<em>float</em>) – Surface pressure (mBar)</p></li>
+<li><p><strong>oz</strong> (<em>float</em>) – Amount of ozone in a vertical column from surface (cm)</p></li>
+<li><p><strong>wtr</strong> (<em>float</em>) – Amount of precipitable water in a vertical column from surface (cm)</p></li>
+<li><p><strong>τ500</strong> (<em>float</em>) – Aerosol optical depth from surface in a vertical path at 0.5 μm wavelength</p></li>
+<li><p><strong>τ380</strong> (<em>float</em>) – Aerosol optical depth from surface in a vertical path at 0.38 μm wavelength</p></li>
+<li><p><strong>ba</strong> (<em>float</em>) – Ratio of the forward-scattered irradiance to the total scattered irradiance due to aerosols</p></li>
+<li><p><strong>rg</strong> (<em>float</em>) – Ground albedo</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Day of year</p></li>
+<li><p>Hour in decimal hour</p></li>
+<li><p>Extraterrestrial radiation in Watt per meter square (W/m²)</p></li>
+<li><p>Day angle (°)</p></li>
+<li><p>Solar declination (°)</p></li>
+<li><p>Equation of time (min)</p></li>
+<li><p>Hour angle (°)</p></li>
+<li><p>Angle between a line to the sun and the local zenith (°)</p></li>
+<li><p>Air mass</p></li>
+<li><p>Transmittance of Rayleigh scattering</p></li>
+<li><p>Transmittance of ozone absorptance</p></li>
+<li><p>Transmittance of absorptance of uniformly mixed gases (carbon dioxide and oxygen)</p></li>
+<li><p>Transmittance of water vapor absorptance</p></li>
+<li><p>Transmittance of aerosol absorptance and scattering</p></li>
+<li><p>Transmittance of aerosol absorptance</p></li>
+<li><p>rs</p></li>
+<li><p>Direct Normal insolation (W/m²)</p></li>
+<li><p>Direct solar irradiance on a horizontal surface (W/m²)</p></li>
+<li><p>Solar irradiance on a horizontal surface from scattered light (W/m²)</p></li>
+<li><p>Total (global) solar irradiance on a horizontal surface (W/m²)</p></li>
+<li><p>Day of year and hour in decimal</p></li>
+<li><p>Diffuse solar irradiance on a horizontal surface (W/m²)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.clim_csi">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">clim_csi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csi0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">za</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">za0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">89</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_sky</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.clim_csi" title="Permalink to this definition"></a></dt>
+<dd><p>Compute climatology from empirical distribution of clear sky index based on given quantile <em>q</em>. This function
+rely on the <a class="reference internal" href="#solar.ecdf0" title="solar.ecdf0"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ecdf0()</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csi</strong> (<em>numpy.ndarray</em>) – Clear sky index</p></li>
+<li><p><strong>q</strong> (<em>numpy.ndarray</em>) – Quantile value</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – Number of class for frequency construction. If not given, <span class="math notranslate nohighlight">\(b=500\)</span>.</p></li>
+<li><p><strong>csi0</strong> (<em>float</em>) – Maximum allowed value of the clear sky indexes</p></li>
+<li><p><strong>frac</strong> (<em>float</em>) – Maximum fraction of extraterrestrial irradiation to earth surface</p></li>
+<li><p><strong>za</strong> (<em>numpy.ndarray</em>) – Values of the zenith angle, can be None</p></li>
+<li><p><strong>za0</strong> (<em>float</em>) – Zenith angle value for filtering data</p></li>
+<li><p><strong>clear_sky</strong> (<em>numpy.ndarray</em>) – Clear sky data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D numpy array of the probabilistic outcome</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.clim_csi_hour">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">clim_csi_hour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csi0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">za</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">za0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">89</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_sky</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.clim_csi_hour" title="Permalink to this definition"></a></dt>
+<dd><p>Compute climatology from empirical distribution of clear sky index based on given quantile <em>q</em> and time steps. This
+function rely on the <a class="reference internal" href="#solar.ecdf0" title="solar.ecdf0"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ecdf0()</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_step</strong> (<em>pandas.DatetimeIndex</em>) – Date for the computation of identical time steps</p></li>
+<li><p><strong>csi</strong> (<em>numpy.ndarray</em>) – Clear sky index</p></li>
+<li><p><strong>q</strong> (<em>numpy.ndarray</em>) – Quantile value</p></li>
+<li><p><strong>csi0</strong> (<em>float</em>) – Maximum allowed value of the clear sky indexes</p></li>
+<li><p><strong>frac</strong> (<em>float</em>) – Maximum fraction of extraterrestrial irradiation to earth surface</p></li>
+<li><p><strong>za</strong> (<em>numpy.ndarray</em>) – Values of the zenith angle, can be None</p></li>
+<li><p><strong>za0</strong> (<em>float</em>) – Zenith angle value for filtering data</p></li>
+<li><p><strong>clear_sky</strong> (<em>numpy.ndarray</em>) – Clear sky data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D numpy array of the probabilistic outcome</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.earth_dlt_t">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">earth_dlt_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.earth_dlt_t" title="Permalink to this definition"></a></dt>
+<dd><p>Compute earth delta_t from historical and forecast given by the U.S. Naval Observatory from year 1657 to
+2033.75.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_step</strong> (<em>tuple</em>) – List of date with Python datetime format</p></li>
+<li><p><strong>fig</strong> (<em>bool</em>) – if set True, plot U.S. Naval Observatory data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Earth Δt in seconds (s)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.earth_helio">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">earth_helio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">χ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.earth_helio" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Earth heliocentric longitude, latitude, and radius vector coefficient. It uses Earth Periodic Terms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jme</strong> (<em>numpy.ndarray</em>) – Julian ephemeris millennium</p></li>
+<li><p><strong>χ</strong> (<em>numpy.ndarray</em>) – Earth Periodic Terms</p></li>
+<li><p><strong>param</strong> (<em>list</em>) – List of used parameter. Example for heliocentric radius vector param = [‘R0’, ‘R1’, ‘R2’, ‘R3’, ‘R4’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Earth heliocentric longitude, latitude, and radius vector coefficient (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.earth_helio_all">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">earth_helio_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.earth_helio_all" title="Permalink to this definition"></a></dt>
+<dd><p>Compute heliocentric latitude and Earth heliocentric longitude based on Earth Periodic Terms. This
+function need function <a class="reference internal" href="#solar.earth_helio" title="solar.earth_helio"><code class="xref py py-func docutils literal notranslate"><span class="pre">earth_helio()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>numpy.ndarray</em>) – Julian ephemeris millennium</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>b (numpy.ndarray) - Earth heliocentric latitude (rad)</p></li>
+<li><p>l0 (numpy.ndarray) - Earth heliocentric longitude (rad)</p></li>
+<li><p>r0 (numpy.ndarray) - Earth heliocentric radius vector in Astronomical Units (AU)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.earth_term">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">earth_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">χ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.earth_term" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Earth heliocentric longitude, latitude, or radius vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>χ</strong> (<em>numpy.ndarray</em>) – Coefficient used computation for the earth  heliocentric longitude, latitude, or radius vector</p></li>
+<li><p><strong>jme</strong> (<em>numpy.ndarray</em>) – Julian ephemeris millennium</p></li>
+<li><p><strong>param</strong> (<em>list</em>) – List of used parameter. Example for heliocentric radius vector param = [‘R0’, ‘R1’, ‘R2’, ‘R3’, ‘R4’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Earth heliocentric longitude, latitude, or radius vector (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.ecdf0">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">ecdf0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.ecdf0" title="Permalink to this definition"></a></dt>
+<dd><p>Return empirical at given quantile <em>q</em> with linear interpolation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> (<em>int</em>) – Number of class for frequency construction. If not given, <span class="math notranslate nohighlight">\(b=500\)</span>.</p></li>
+<li><p><strong>q</strong> (<em>numpy.ndarray</em>) – Quantile value</p></li>
+<li><p><strong>arr</strong> (<em>numpy.ndarray</em>) – Value to be converted to ecdf</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.ephem_da">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">ephem_da</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.ephem_da" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Julian and Julian Ephemeris Day, Century, and Millennium</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yr</strong> (<em>np.ndarray</em>) – Year of the considered date</p></li>
+<li><p><strong>mon</strong> (<em>np.ndarray</em>) – Month of the considered date</p></li>
+<li><p><strong>da</strong> (<em>np.ndarray</em>) – Day of the month of the considered date</p></li>
+<li><p><strong>hr</strong> (<em>np.ndarray</em>) – Decimal hour of the date</p></li>
+<li><p><strong>Δt</strong> (<em>np.ndarray</em>) – Earth delta t time in second for a specific date</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>jce (numpy.ndarray) - Julian Ephemeris Day</p></li>
+<li><p>jc (numpy.ndarray) - Julian century</p></li>
+<li><p>jd (numpy.ndarray) - Julian Day</p></li>
+<li><p>jme (numpy.ndarray) - Julian ephemeris millennium</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.geo_long">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">geo_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.geo_long" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the geocentric longitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>l0</strong> (<em>numpy.ndarray</em>) – Earth heliocentric longitude (rad)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Geocentric longitude <span class="math notranslate nohighlight">\(\theta_0\)</span> (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.geo_sun_dec">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">geo_sun_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">λ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ε</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">β</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.geo_sun_dec" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the geocentric sun declination</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>λ</strong> (<em>numpy.ndarray</em>) – Apparent sun longitude (rad)</p></li>
+<li><p><strong>ε</strong> (<em>numpy.ndarray</em>) – True obliquity of the ecliptic ε (rad)</p></li>
+<li><p><strong>β</strong> (<em>numpy.ndarray</em>) – Geocentric latitude (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Geocentric sun declination <span class="math notranslate nohighlight">\(\delta\)</span> (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.geo_sun_r_ac">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">geo_sun_r_ac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">λ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ε</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">β</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.geo_sun_r_ac" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the geocentric sun right ascension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>λ</strong> (<em>numpy.ndarray</em>) – Apparent sun longitude (rad)</p></li>
+<li><p><strong>ε</strong> (<em>numpy.ndarray</em>) – True obliquity of the ecliptic ε (rad)</p></li>
+<li><p><strong>β</strong> (<em>numpy.ndarray</em>) – Geocentric latitude (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Geocentric sun right ascension α (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.ghi_clim">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">ghi_clim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clear_sky</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.ghi_clim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.incid_angle_surf">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">incid_angle_surf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hrt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">δ1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ω</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">θ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">γ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.incid_angle_surf" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the incidence angle for a surface oriented in any
+direction <span class="math notranslate nohighlight">\(I_0\)</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hrt</strong> (<em>numpy.ndarray</em>) – Topocentric local hour angle (rad)</p></li>
+<li><p><strong>φ</strong> (<em>float</em>) – Geocentric latitude (rad)</p></li>
+<li><p><strong>δ1</strong> (<em>numpy.ndarray</em>) – Topocentric sun declination (rad)</p></li>
+<li><p><strong>ω</strong> (<em>float</em>) – Slope of the surface measured from the horizontal plane (rad)</p></li>
+<li><p><strong>θ</strong> (<em>numpy.ndarray</em>) – Topocentric zenith angle (rad)</p></li>
+<li><p><strong>γ</strong> (<em>float</em>) – Surface azimuth rotation angle, measured from south to the projection of the surface normal on the horizontal
+plane, positive or negative if oriented west or east from south, respectively</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy.ndarray</em> – Incidence angle for a surface oriented in any</p></li>
+<li><p><em>direction</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.nutation_long_obl">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">nutation_long_obl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.nutation_long_obl" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the nutation in longitude Δε and the nutation in obliquity Δψ. The computation uses the periodic terms
+for the nutation in longitude and obliquity. This function use <code class="xref py py-func docutils literal notranslate"><span class="pre">poly_ord_3rd()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>numpy.ndarray</em>) – Julian Ephemeris Day</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Δε (numpy.ndarray) - Nutation in obliquity (°)</p></li>
+<li><p>Δψ (numpy.ndarray) - Nutation in longitude (°)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.obl_eclip">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">obl_eclip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δε</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.obl_eclip" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the true obliquity of the ecliptic.
+:param jme: Julian ephemeris millennium
+:type jme: numpy.ndarray
+:param Δε: Nutation in obliquity (°)
+:type Δε: numpy.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True obliquity of the ecliptic ε (rad)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.obs_lcl_hr_ang">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">obs_lcl_hr_ang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">α</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ν</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">σ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.obs_lcl_hr_ang" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the observer local hour angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>α</strong> (<em>numpy.ndarray</em>) – Geocentric sun right ascension (rad)</p></li>
+<li><p><strong>ν</strong> (<em>numpy.ndarray</em>) – Apparent sidereal time at Greenwich (°)</p></li>
+<li><p><strong>σ</strong> (<em>float</em>) – Observer geographical longitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Observer local hour angle (°)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.topo_astro_az_ang">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">topo_astro_az_ang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hrt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">δ1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.topo_astro_az_ang" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the topocentric astronomers azimuth angle Φ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hrt</strong> (<em>numpy.ndarray</em>) – Topocentric local hour angle (rad)</p></li>
+<li><p><strong>φ</strong> (<em>float</em>) – Geocentric latitude (rad)</p></li>
+<li><p><strong>δ1</strong> (<em>numpy.ndarray</em>) – Topocentric sun declination (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Topocentric azimuth angle (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.topo_el_angl">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">topo_el_angl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">δ1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hrt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.topo_el_angl" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the topocentric elevation angle without atmospheric refraction correction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>φ</strong> (<em>float</em>) – Geocentric latitude (rad)</p></li>
+<li><p><strong>δ1</strong> (<em>numpy.ndarray</em>) – Topocentric sun declination (rad)</p></li>
+<li><p><strong>hrt</strong> (<em>numpy.ndarray</em>) – Topocentric local hour angle (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Topocentric elevation angle without atmospheric refraction correction (°)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.topo_el_angl_corr">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">topo_el_angl_corr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">press</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.topo_el_angl_corr" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the topocentric zenith angle with atmospheric refraction correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>press</strong> (<em>float</em>) – Annual average local pressure in millibars (mbar)</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – Annual average local temperature celsius (°C)</p></li>
+<li><p><strong>e0</strong> (<em>numpy.ndarray</em>) – Elevation angle without atmospheric refraction correction (°)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Topocentric zenith angle (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.topo_lcl_hour_angl">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">topo_lcl_hour_angl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Δα</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.topo_lcl_hour_angl" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the topocentric local hour angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Δα</strong> (<em>numpy.ndarray</em>) – Parallax in the sun right ascension (rad)</p></li>
+<li><p><strong>hro</strong> (<em>numpy.ndata</em>) – Observer local hour angle (rad)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Topocentric local hour angle (rad)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="solar.topo_sun">
+<span class="sig-prename descclassname"><span class="pre">solar.</span></span><span class="sig-name descname"><span class="pre">topo_sun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">α</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">φ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">δ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solar.topo_sun" title="Permalink to this definition"></a></dt>
+<dd><p>Compute Topocentric sun right ascension <span class="math notranslate nohighlight">\(\alpha'\)</span>, Parallax in the sun right ascension Δα and Topocentric
+sun declination <span class="math notranslate nohighlight">\(\delta'\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>α</strong> (<em>numpy.ndarray</em>) – Geocentric sun right ascension (rad)</p></li>
+<li><p><strong>φ</strong> (<em>float</em>) – Geocentric latitude (rad)</p></li>
+<li><p><strong>δ</strong> (<em>numpy.ndarray</em>) – Geocentric sun declination <span class="math notranslate nohighlight">\(\delta\)</span> (rad)</p></li>
+<li><p><strong>hro</strong> (<em>numpy.ndata</em>) – Observer local hour angle (rad)</p></li>
+<li><p><strong>el</strong> (<em>float</em>) – Elevation in meter (m)</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Earth heliocentric radius vector in Astronomical Units (AU)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha'\)</span> (numpy.ndarray) - Topocentric sun right ascension (rad)</p></li>
+<li><p>Δα (numpy.ndarray) - Parallax in the sun right ascension (rad)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta'\)</span> (numpy.ndarray) - Topocentric sun declination (rad)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="examples/examples_climato.html" class="btn btn-neutral float-left" title="Probabilistic forecast from climatology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bibliography.html" class="btn btn-neutral float-right" title="Bibliography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Faly Ramahatana &amp; Mathieu David.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
